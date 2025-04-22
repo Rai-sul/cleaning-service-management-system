@@ -1,5 +1,9 @@
 <?php include('../config/constant.php')  ?>
-
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/admin.css">
+    </head>
+</html>
 
 <div class="main-content">
     <div class="wrapper">
@@ -21,10 +25,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <p>Don't have an account?</p> <br>
-                    <p>signup Here</p>
+
                     <td colspan="2">
+                        <p>Don't have an account? signUp Here</p>
                         <input type="submit" name="signup" value="Signup" class="btn-primary">
+                        </td>
                 </tr>
 
             </table>
@@ -36,18 +41,15 @@
                 $password = md5($_POST['password']);
 
                 // SQL query to check if the user exists
-                $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+                $sql = "SELECT * FROM admin WHERE User_Name='$username' AND Password='$password'";
                 $res = mysqli_query($conn, $sql);
                 $count = mysqli_num_rows($res);
 
                 if ($count == 1) {
                     // User exists and login successful
-                    echo "Login Successful";
+                    $_SESSION['user'] = $username; // Store username in session variable
                     header('location:'.SITEURL.'admin/index.php');
-                } else{
-                    echo "Login Failed";
-                    header('location:'.SITEURL.'admin/admin-login.php');
-                }
+                } 
             }
 
             if (isset($_POST['signup'])){

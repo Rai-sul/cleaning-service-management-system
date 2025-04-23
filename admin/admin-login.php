@@ -1,4 +1,6 @@
-<?php include('../config/constant.php')  ?>
+<?php include('../config/constant.php');  ?>
+
+
 <html>
     <head>
         <link rel="stylesheet" href="../css/admin.css">
@@ -38,7 +40,7 @@
         <?php
             if (isset($_POST['login'])){
                 $username = $_POST['username'];
-                $password = md5($_POST['password']);
+                $password = $_POST['password'];
 
                 // SQL query to check if the user exists
                 $sql = "SELECT * FROM admin WHERE User_Name='$username' AND Password='$password'";
@@ -47,8 +49,8 @@
 
                 if ($count == 1) {
                     // User exists and login successful
-                    $_SESSION['user'] = $username; // Store username in session variable
-                    header('location:'.SITEURL.'admin/index.php');
+                    $_SESSION['user'] = $username ; // Store username in session variable
+                    header('location:'.SITEURL.'admin/');
                 } 
             }
 

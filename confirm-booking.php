@@ -1,4 +1,4 @@
-<?php include('partial-front/header.php') ?>
+<?php include('partial-front/header.php'); ?>
 <?php 
     // Get the value $id from imput hidden type
     if(isset($_POST['submit'])){

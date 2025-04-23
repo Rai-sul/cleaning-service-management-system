@@ -1,4 +1,4 @@
-<?php include('partial-front/header.php') ?>
+<?php include('partial-front/header.php'); ?>
 
 <section class="container">
       <div class="section-title">

@@ -1,5 +1,9 @@
-<?php include('../config/constant.php')  ?>
-<?php include('login-check.php') ?>
+<?php 
+
+    include('../config/constant.php'); 
+    include('login-check.php');
+    
+    ?>
 
 <html>
     <head>

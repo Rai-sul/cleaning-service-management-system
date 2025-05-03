@@ -1,13 +1,17 @@
 <?php include('partial-front/header.php'); ?>
 <?php 
-    // Get the value $id from imput hidden type
+    // Get the value $id from input hidden type
     if(isset($_POST['submit'])){
         $id=$_POST['ID'];
+        $uid=$_POST['UID'];
+        echo 'Uid', $uid;
+        echo 'id', $id;
     }
 
-    $sql="SELECT * FROM service WHERE Id=$id";
+    $sql="SELECT * FROM service WHERE Id='$id'";
     $res=mysqli_query($conn,$sql);
     $count=mysqli_num_rows($res);
+    echo 'count', $count;
     if ($count==1){
         while($rows=mysqli_fetch_assoc($res)){
         $ID = $rows['Id'];
@@ -37,18 +41,12 @@
     <h1 class="text-center">Confirm Your Booking</h1>
 
     <form action="add-appointment.php" method="POST" class="form-style">
+        <input type="hidden" name="SID" value="<?php echo $id; ?>">
+        <input type="hidden" name="UID" value="<?php echo $uid; ?>">
      
         <table class="tbl-full">
-            <input type="hidden" name="ID" value="<?php echo $ID; ?>">
-            <input type="hidden" name="service_title" value="<?php echo $service_title; ?>">
-            <input type="hidden" name="price" value="<?php echo $price; ?>">
-            <input type="hidden" name="price_des" value="<?php echo $price_des; ?>">
             <input type="hidden" name="appointment" value="<?php echo $appoinment; ?>">
             <input type="hidden" name="measure" value="<?php echo $measure; ?>">
-            <input type="hidden" name="full_name" value="<?php echo $full_name; ?>">
-            <input type="hidden" name="phone" value="<?php echo $phone; ?>">
-            <input type="hidden" name="email" value="<?php echo $email; ?>">
-            <input type="hidden" name="address" value="<?php echo $address; ?>">
             <input type="hidden" name="appoinment_dat" value="<?php echo $appoinment_dat; ?>">
             <input type="hidden" name="Price" value="<?php echo $Price; ?>">  
 
@@ -90,6 +88,7 @@
 
             <tr>
                 <td>Address: </td>
+                <td><?php echo $address; ?></td>
             </tr>
             
             <tr>

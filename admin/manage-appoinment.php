@@ -5,7 +5,7 @@
         <h1 class="text-center">Manage Appoinment</h1>
         <table class="tbl-full">
         <tr>
-            <th>ID</th>
+            <th>Service ID</th>
             <th>Service-Title</th>
             <th>Price</th>
             <th>Measure</th>
@@ -21,23 +21,23 @@
         </tr>
 
             <?php 
-                $sql = "SELECT * FROM appointment";
+                $sql="SELECT s.Id, s.Title, s.price, s.price_des, a.measure, a.total, a.appointment_on, a.appointment_made, a.status, u.full_name, u.phone, u.email, u.address FROM service s INNER JOIN appointment a ON a.s_id = s.Id inner join user u ON u.id = a.u_id";
                 $res = mysqli_query($conn, $sql); 
                 $count = mysqli_num_rows($res);
                 if ($count > 0) {
                     while ($rows = mysqli_fetch_assoc($res)) {
-                        $id = $rows['id'];
-                        $service_title = $rows['service'];
+                        $id = $rows['Id'];
+                        $service_title = $rows['Title'];
                         $price = $rows['price'];
                         $price_des = $rows['price_des'];
                         $measure = $rows['measure'];
                         $total = $rows['total'];
                         $appoinment_on = $rows['appointment_on'];
                         $appoinment_made = $rows['appointment_made'];
-                        $customer_name = $rows['customer_name'];
-                        $customer_contact = $rows['customer_contact'];
-                        $customer_email = $rows['customer_email'];
-                        $customer_address = $rows['customer_address'];
+                        $customer_name =  $rows['full_name'];
+                        $customer_contact = $rows['phone'];
+                        $customer_email = $rows['email'];
+                        $customer_address = $rows['address'];
                         $status = $rows['status'];
                         ?>
                         <tr>
@@ -66,3 +66,6 @@
 </div>
 
 <?php include('partial/footer.php') ?>
+
+
+<!-- WHERE a.s_id = '$id' AND a.u_id = '$uid' -->

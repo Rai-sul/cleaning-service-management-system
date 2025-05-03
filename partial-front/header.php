@@ -27,10 +27,17 @@
             <li><a href="services.php">Services</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
-          <div class="nav-buttons">
-            <a href="#" class="btn btn-outline">Login</a>
+
+          <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>  
+            <div class="nav-buttons">
+            <!-- <a href="#" class="btn btn-outline">Login</a> -->
             <a href="services.php" class="btn btn-primary">Book Now</a>
-          </div>
+          </div>  
         </nav>
       </div>
     </header>

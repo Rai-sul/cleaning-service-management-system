@@ -49,7 +49,7 @@
 
                 if ($count == 1) {
                     // User exists and login successful
-                    $_SESSION['user'] = $username ; // Store username in session variable
+                    $_SESSION['user-admin'] = $username ; // Store username in session variable
                     header('location:'.SITEURL.'admin/');
                 } 
             }

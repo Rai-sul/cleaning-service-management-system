@@ -15,7 +15,7 @@
                 <tr>
                     <td>Description</td>
                     <td>
-                        <input type="number" name="description" placeholder="Desription">
+                        <input type="text" name="description" placeholder="Desription">
                     </td>
                 </tr>
                 <tr>

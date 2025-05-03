@@ -512,3 +512,89 @@ footer {
   font-size: 1rem;
   background-color: white;
 }
+
+/* login user Design */
+
+.loginBody {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.login-container {
+  background: #fff;
+  color: #333;
+  width: 90%; /* Adjusts to smaller screens */
+  max-width: 400px; /* Limits the width on larger screens */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #6a11cb;
+}
+
+.login-container form {
+  width: 100%;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #6a11cb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container input[type="submit"]:hover {
+  background: #2575fc;
+}
+
+.login-container .signup-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-container .signup-link a {
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.login-container .signup-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"],
+  .login-container input[type="submit"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    define('SITEURL', 'http://localhost/CSMSS_git/');
+    define('SITEURL', 'http://localhost/CSMS/');
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');
-    define('DB_NAME', 'csmss_git');
+    define('DB_NAME', 'csms');
 
     $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD);
     if (!$conn) {

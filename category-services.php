@@ -33,7 +33,7 @@ if (isset($_GET['category_title'])) {
                             <h3>Regular <?php echo $service_title; ?> Cleaning</h3>
                             <div class="service-meta">
                                 <div class="service-price">
-                                    <?php echo $price; ?><span><?php echo  $price_des; ?></span>
+                                    <?php echo $price; ?><span><?php echo  " ",$price_des; ?></span>
                                 </div>
                                 <div class="service-rating">
                                     <i class="fas fa-star"></i>

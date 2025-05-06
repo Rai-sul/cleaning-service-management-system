@@ -28,7 +28,7 @@
                   <div class="service-content">
                     <h3>Regular <?php echo $service_title; ?> Cleaning</h3>
                     <div class="service-meta">
-                      <div class="service-price">TK. <?php echo $price; ?><span><?php echo $price_des; ?></span></div>
+                      <div class="service-price">TK. <?php echo $price; ?><span><?php echo " ", $price_des; ?></span></div>
                       <div class="service-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>

@@ -68,7 +68,8 @@
             
                 if($res){
                     $_SESSION['user-signup'] = $username ; // Store username in session variable
-                    header('location:'.SITEURL.'user_info.php?Uid='.$ID);
+                    // header('location:'.SITEURL.'user_info.php?Uid='.$ID);
+                    header('location:'.SITEURL.'services.php');
             }
         }
 

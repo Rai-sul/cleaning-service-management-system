@@ -157,7 +157,7 @@
                       Complete home cleaning including dusting, vacuuming, mopping, and
                       sanitizing all surfaces.
                     </p>
-                    <a href="booking.php?id=<?php echo $ID; ?>" class="btn btn-primary">Book Now</a>
+                    <a href="user_info.php?id=<?php echo $ID; ?>" class="btn btn-primary">Book Now</a>
                   </div>
                 </div>   
                 <?php          

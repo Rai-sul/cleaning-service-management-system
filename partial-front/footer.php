@@ -21,8 +21,8 @@
             <ul class="footer-links">
               <li><a href="#">Home Cleaning</a></li>
               <li><a href="#">Office Cleaning</a></li>
-              <li><a href="#">Deep Cleaning</a></li>
-              <li><a href="#">Window Cleaning</a></li>
+              <li><a href="#">Car Wash</a></li>
+              <li><a href="#">Dry Cleaning</a></li>
               <li><a href="#">Carpet Cleaning</a></li>
             </ul>
           </div>

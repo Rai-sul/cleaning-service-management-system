@@ -26,6 +26,12 @@
             $price = $rows['Price'];
             $price_des = $rows['Price_des'];
             $image_name = $rows['Image_Name'];
+
+            // for user
+            $uname = $rows['full_name'];
+            $email = $rows['email'];
+            $phone = $rows['phone'];
+            $address = $rows['address'];
             }
         }
 }
@@ -75,19 +81,19 @@
                         
                         <tr>
                             <td><b>Full Name</b></td>
-                            <td><input type="text" name="full_name" placeholder="Enter Your Full Name" class="input-responsive" required></td>
+                            <td><input type="text" name="full_name" value=<?php echo $uname; ?> class="input-responsive" required></td>
                         </tr>
                         <tr>
                             <td><b>Phone Number</b></td>
-                            <td><input type="tel" name="phone" placeholder="E.g. 018xxxxxxx" class="input-responsive" required></td>
+                            <td><input type="tel" name="phone" value=<?php echo $phone; ?> class="input-responsive" required></td>
                         </tr>
                         <tr>
                             <td><b>Email</b></td>
-                            <td><input type="email" name="email" placeholder="Enter Your Phone Number" class="input-responsive" required></td>
+                            <td><input type="email" name="email" value=<?php echo $email; ?> class="input-responsive" required></td>
                         </tr>
                         <tr>
                             <td><b>Address</b></td>
-                            <td><textarea name="address" row="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea></td>
+                            <td><textarea name="address" row="10" value=<?php echo $address; ?> class="input-responsive" required></textarea></td>
                         </tr>
 
                         <tr>

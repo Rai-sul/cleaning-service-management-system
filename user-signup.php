@@ -9,48 +9,47 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 </html>
 
-<div class="main-content">
-    <div class="wrapper">
+<body class="loginBody">
+    <div class="login-container">
         <h1>Login</h1>
         <br><br>
         <form action="" method="POST">
-            <table class="tbl-full">
-            <tr>
-                    <td>Full Name</td>
-                    <td><input type="text" name="name" placeholder="Enter Full Name"></td>
-                </tr>
-            <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username" placeholder="Enter Username"></td>
-                </tr>
+            <table>
                 <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password" placeholder="Enter Password"></td>
-                </tr>
+                        <td>Full Name</td>
+                        <td><input type="text" name="name" placeholder="Enter Full Name"></td>
+                    </tr>
                 <tr>
-                    <td>Email</td>
-                    <td><input type="text" name="email" placeholder="Enter Username"></td>
-                </tr>
-                <tr>
-                    <td>Address</td>
-                    <td><input type="text" name="address" placeholder="Enter Username"></td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td><input type="text" name="phone" placeholder="Enter Username"></td>
-                </tr>
+                        <td>Username</td>
+                        <td><input type="text" name="username" placeholder="Enter Username"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="password" placeholder="Enter Password"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text" name="email" placeholder="Enter Username"></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><input type="text" name="address" placeholder="Enter Username"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><input type="text" name="phone" placeholder="Enter Username"></td>
+                    </tr>
 
-                <tr>
+                    <tr>
 
-                    <td colspan="2">
-                        <input type="submit" name="signup" value="Signup" class="btn-primary">
-                        </td>
-                </tr>
-
+                        <td colspan="2">
+                            <input type="submit" name="signup" value="Signup" class="btn-primary">
+                            </td>
+                    </tr>
             </table>
         </form>
 
@@ -76,4 +75,4 @@
            
         ?>
     </div>
-</div>
+</body>

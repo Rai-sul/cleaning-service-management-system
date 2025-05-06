@@ -47,14 +47,17 @@
         <div class="col-4 text-center">
 
             <?php
-            $sql4 = "SELECT SUM(total) AS Total FROM appointment WHERE status='Paid'";
+            $sql4 = "SELECT SUM(total) FROM appointment WHERE status='Appoint'";
             $res4=mysqli_query($conn, $sql4);
-            $count4=mysqli_num_rows($res4);
+            $count=mysqli_num_rows($res4);
+            while($rows=mysqli_fetch_assoc($res4)){
+                $count4 = $rows['SUM(total)'];
+            }
 
             ?>
             <h1><?php echo $count4; ?></h1>
             <br />
-            Reenue  Generated
+            Revenue  Generated
         </div>
         <div class="clearfix"></div>
     </div>

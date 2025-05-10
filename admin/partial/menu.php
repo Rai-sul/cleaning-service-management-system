@@ -21,7 +21,7 @@
                     <li><a href="manage-category.php">Categories</a></li>
                     <li><a href="manage-services.php">Services</a></li>
                     <li><a href="manage-appoinment.php">Appoinments</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="admin-logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>

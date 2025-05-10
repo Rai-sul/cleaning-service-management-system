@@ -1,4 +1,11 @@
 <?php include('partial-front/header.php'); ?>
+
+<?php
+  if (isset($_SESSION['booked-service'])) {
+      echo "<div class='success-message'>" . $_SESSION['booked-service'] . "</div>";
+      unset($_SESSION['booked-service']);
+  }
+?>
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">

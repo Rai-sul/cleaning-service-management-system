@@ -1,4 +1,19 @@
 <?php include('partial/menu.php'); ?>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+</html>
+
+<?php
+  if (isset($_SESSION['admin-login'])) {
+      echo "<div class='success-message'>" . $_SESSION['admin-login'] . "</div>";
+      unset($_SESSION['admin-login']);
+  }
+?>
+
+
 <div class="main-content">
     <div class="wrapper">
 

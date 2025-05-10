@@ -1,40 +1,50 @@
 <?php include('partial-front/header.php'); ?>
 
 <?php
-    if(isset($_GET['id']) && isset($_GET['Uid'])){
-        $id=$_GET['id'];
-        $Uid=$_GET['Uid'];
-        echo 'Uid', $Uid;
-        echo 'id', $id;
+  
 
-        $sql1="UPDATE user SET s_id = '$id' WHERE id = '$Uid'";
-        $res1=mysqli_query($conn,$sql1);
+    if (isset($_SESSION['user_id']) || isset($_SESSION['service_id'])) {
+        $Uid = $_SESSION['user_id']; // Retrieve user ID
+        $id = $_SESSION['service_id']; // Retrieve service ID
 
-        $sql="SELECT s.Title, s.Price, s.Price_des, s.Image_Name, s.Category_Title, 
-        s.Active, u.full_name,u.username, u.email,u.phone, u.address 
-        FROM service s INNER JOIN user u ON u.s_id = '$id' WHERE u.id = '$Uid' AND s.Id = '$id'";
+        echo "User ID: " . $Uid . "<br>";
+        echo "Service ID: " . $id . "<br>";
+    } else {
+        echo "Session variables are not set.";
+    }
+    // $id=$_SESSION['sservice_id'];
+    // $Uid=$_SESSION['user_id'];
+    // echo 'Uid', $Uid;
+    // echo 'id', $id;
 
-        $res=mysqli_query($conn,$sql);
-        $count=mysqli_num_rows($res);
-        echo 'count', $count;
-        if ($count==1){
-            while($rows=mysqli_fetch_assoc($res)){
-            // $ID = $rows['Id'];
-           
-            $service_title = $rows['Title'];
-            echo 'serviceee',$service_title;
-            $price = $rows['Price'];
-            $price_des = $rows['Price_des'];
-            $image_name = $rows['Image_Name'];
+    $sql1="UPDATE user SET s_id = '$id' WHERE id = '$Uid'";
+    $res1=mysqli_query($conn,$sql1);
 
-            // for user
-            $uname = $rows['full_name'];
-            $email = $rows['email'];
-            $phone = $rows['phone'];
-            $address = $rows['address'];
-            }
+    $sql="SELECT s.Title, s.Price, s.Price_des, s.Image_Name, s.Category_Title, 
+    s.Active, u.full_name,u.username, u.email,u.phone, u.address 
+    FROM service s INNER JOIN user u ON u.s_id = '$id' WHERE u.id = '$Uid' AND s.Id = '$id'";
+
+    $res=mysqli_query($conn,$sql);
+    $count=mysqli_num_rows($res);
+    echo 'count', $count;
+    if ($count==1){
+        while($rows=mysqli_fetch_assoc($res)){
+        // $ID = $rows['Id'];
+        
+        $service_title = $rows['Title'];
+        echo 'serviceee',$service_title;
+        $price = $rows['Price'];
+        $price_des = $rows['Price_des'];
+        $image_name = $rows['Image_Name'];
+
+        // for user
+        $uname = $rows['full_name'];
+        $email = $rows['email'];
+        $phone = $rows['phone'];
+        $address = $rows['address'];
         }
-}
+    }
+
         
     
 
@@ -93,7 +103,9 @@
                         </tr>
                         <tr>
                             <td><b>Address</b></td>
-                            <td><textarea name="address" row="10" value=<?php echo $address; ?> class="input-responsive" required></textarea></td>
+                            <td>
+                                <textarea name="address" class="input-responsive" required><?php echo $address; ?></textarea>
+                            </td>
                         </tr>
 
                         <tr>

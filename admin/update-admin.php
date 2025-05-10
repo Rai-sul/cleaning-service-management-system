@@ -31,7 +31,7 @@
                 <tr>
                     <td>Current Name:</td>
                     <td>
-                        <input type="text" name="current_name" value="<?php echo htmlspecialchars($full_name); ?>" readonly>
+                        <input type="text" name="current_name" value="<?php echo $full_name; ?>" readonly>
                     </td>
                 </tr>
 
@@ -45,7 +45,7 @@
                 <tr>
                     <td>Current Username:</td>
                     <td>
-                        <input type="text" name="current_username" value="<?php echo htmlspecialchars($username); ?>" readonly >
+                        <input type="text" name="current_username" value="<?php echo $username; ?>" readonly >
                     </td>
                 </tr>
 
@@ -59,7 +59,7 @@
                 <tr>
                     <td>Current Email</td>
                     <td>
-                        <input type="text" name="current_email" value="<?php echo htmlspecialchars($email); ?>" readonly>
+                        <input type="text" name="current_email" value="<?php echo $email; ?>" readonly>
                 </tr>
 
                 <tr>

@@ -1,9 +1,9 @@
 <?php include('config/constant.php');  ?>
 <?php
     if(isset($_GET['id'])){
-        $id=$_GET['id'];
+        $id=$_GET['id']; //service id
+        // echo $id;
     }
-    echo $id;
 
 ?>
 
@@ -16,46 +16,20 @@
 <body class="loginBody">
     <div class="login-container">
         <h1>Login</h1>
-        <br><br>
         <form action="" method="POST">
-            <table>
-                <tr>
-                        <td>Full Name</td>
-                        <td><input type="text" name="name" placeholder="Enter Full Name"></td>
-                    </tr>
-                <tr>
-                        <td>Username</td>
-                        <td><input type="text" name="username" placeholder="Enter Username"></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="password" placeholder="Enter Password"></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="text" name="email" placeholder="Enter Username"></td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td><input type="text" name="address" placeholder="Enter Username"></td>
-                    </tr>
-                    <tr>
-                        <td>Phone</td>
-                        <td><input type="text" name="phone" placeholder="Enter Username"></td>
-                    </tr>
-
-                    <tr>
-
-                        <td colspan="2">
-                            <input type="submit" name="signup" value="Signup" class="btn-primary">
-                            </td>
-                    </tr>
-            </table>
+            <input type="text" name="name" placeholder="Enter Full Name" required>
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="text" name="email" placeholder="Enter Email" required>
+            <input type="text" name="address" placeholder="Enter Address" required>
+            <input type="text" name="phone" placeholder="Enter Phone" required>
+            <input type="submit" name="signup" value="Signup" class="btn-primary">
         </form>
 
         <?php
             if (isset($_POST['signup'])){
-                $ID= $_POST['id'];
+                // $ID= $_POST['id'];
+                // echo $ID;
                 $full_name= $_POST['name'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -67,8 +41,10 @@
             
                 if($res){
                     $_SESSION['user-signup'] = $username ; // Store username in session variable
-                    // header('location:'.SITEURL.'user_info.php?Uid='.$ID);
-                    header('location:'.SITEURL.'services.php');
+                    // $_SESSION['service_id'] = $id;
+                    header('location:' . SITEURL . 'user_info.php?id=' . $id);
+
+                    // header('location:'.SITEURL.'services.php');
             }
         }
 

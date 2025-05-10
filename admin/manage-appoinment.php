@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1 class="text-center">Manage Appoinment</h1>
+        <h1 class="text-center">Manage Appointment</h1>
         <table class="tbl-full">
         <tr>
             <th>Service ID</th>
@@ -54,7 +54,7 @@
                             <td><?php echo $customer_address; ?></td>
                             <td><?php echo $status; ?></td>
                             <td>
-                                <a href="update-appoinment.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
+                                <a href="update-appointment.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
                             </td>
                         </tr>
                         <?php

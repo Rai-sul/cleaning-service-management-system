@@ -11,7 +11,7 @@ if (isset($_GET['category_title'])) {
         </div>
 
         <?php
-        $sql = "SELECT * FROM service WHERE Category_Title='$title'";
+        $sql = "SELECT * FROM service WHERE Category_Title='$title' AND Active = 'Yes'";
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
 

@@ -97,6 +97,13 @@
 
         $sql2 = "UPDATE category SET Title='$title', Image_Name='$image_name', Active='$active' WHERE Id=$id";
         $res2 = mysqli_query($conn, $sql2);
+
+
+        // if category active is No then service under category should not show
+        $sql3 = "UPDATE service SET Active ='$active' WHERE Category_Title='$title'";
+        $res3=mysqli_query($conn,$sql3);
+
+        
         if($res2 == true){
             $_SESSION['update'] = "<div class='success'>Category updated successfully</div>";
             header('location:'.SITEURL.'admin/manage-category.php');

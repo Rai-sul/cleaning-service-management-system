@@ -103,13 +103,15 @@
         </table>
     </form>
 
+
+
 </section>
+
 
 <?php
     $_SESSION['booked-service'] = "Service booked successfully!";
-    header("Location: index.php");
+    // header("Location: index.php");
 ?>
-
 
 
 <?php include('partial-front/footer.php') ?>

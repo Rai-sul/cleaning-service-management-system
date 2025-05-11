@@ -93,6 +93,7 @@
                     if ($res) {
                         // Signup successful
                         echo "Signup Successful";
+                        $_SESSION['admin-signup'] = "<div class='success-message'>Login Successfull</div>";
                         header('location:'.SITEURL.'admin/admin-login.php');
                     } else {
                         // Signup failed

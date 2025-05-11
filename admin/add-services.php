@@ -98,6 +98,19 @@ if (isset($_POST['submit'])) {
     // Execute query and save in database
     $res = mysqli_query($conn, $sql);
 
+
+    // update values in top_ser table
+    $sql_serviceid = "SELECT Id FROM service WHERE Title='$title'";
+    $res_serviceid = mysqli_query($conn, $sql_serviceid);
+    $row = mysqli_fetch_assoc($res_serviceid);  
+    if ($res_serviceid == true) {
+        $ser_id = $row['Id'];
+        $sql2 = "INSERT INTO top_ser SET service_id = $ser_id ";
+        $res2 = mysqli_query($conn, $sql2);
+
+    }
+
+
     // Check whether data inserted or not
     if ($res == true) {
         $_SESSION['add'] = "<div class='success'>Service added successfully.</div>";

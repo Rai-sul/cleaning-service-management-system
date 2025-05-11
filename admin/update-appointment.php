@@ -1,9 +1,12 @@
 <?php include('partial/menu.php'); ?>
 
 <?php 
-    if (isset($_GET['id'])) {
+    if (isset($_GET['id']) || isset($_GET['u_id'])) {
         $id = $_GET['id'];
-        $sql = "SELECT status FROM appointment WHERE s_id=$id";
+        $uid = $_GET['u_id'];
+        echo $id;
+        echo $uid;
+        $sql = "SELECT status FROM appointment WHERE s_id=$id AND u_id=$uid";
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
         echo $count;
@@ -47,8 +50,13 @@
                             <input type="submit" name="submit" value="submit" class="btn-primary">
                         </td>
                         <td>
-                            <input type="submit" name="cancle" value="Delete" class="btn-danger">
+                            <input type="submit" name="cancle" value="Cancle" class="btn-danger">
                         </td>                      
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="Delete" value="Delete" class="btn-danger">
+                        </td>
                     </tr>
 
             </form>
@@ -63,7 +71,7 @@
         $selected = $_POST['dropdown'];
         echo $selected;
         if (!$selected == "") {
-            $sql = "UPDATE appointment SET status='$selected' WHERE s_id=$id";
+            $sql = "UPDATE appointment SET status='$selected' WHERE s_id=$id AND u_id=$uid";
             $res = mysqli_query($conn, $sql);
 
             if ($res) {
@@ -78,6 +86,15 @@
 
     if (isset($_POST['cancle'])) {
         header( 'location: manage-appoinment.php');
+    }
+
+    if (isset($_POST['Delete'])) {
+        $sql = "DELETE FROM appointment WHERE s_id=$id AND u_id=$uid";
+        $res = mysqli_query($conn, $sql);
+        $_SESSION['Appoint-delete'] = "<div class='error-message'>Appointment Deleted Successfully!</div>";
+        if ($res) {
+            header( 'location: manage-appoinment.php');
+        }
     }
 ?>
 

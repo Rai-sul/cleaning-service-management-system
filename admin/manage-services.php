@@ -1,4 +1,13 @@
 <?php include('partial/menu.php'); ?>
+
+<?php
+    if(isset($_SESSION['ser-del-error']))
+    {
+        echo $_SESSION['ser-del-error'];
+        unset($_SESSION['ser-del-error']);
+    }
+
+?>
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Services</h1>

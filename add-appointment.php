@@ -34,6 +34,24 @@
         $appoinment_dat = $_POST['appoinment_dat'];
         $Price = $_POST['Price'];
 
+   
+        $_SESSION['booked-service'] = "Service booked successfully!";
+
+
+
+
+      
+
+        // $sql3 = "INSERT INTO top_ser (service_id, count)
+        //     SELECT s_id, COUNT(*) AS count
+        //     FROM appointment
+        //     GROUP BY s_id
+        //     ON DUPLICATE KEY UPDATE count = VALUES(count)";
+
+
+        // $res3 = mysqli_query($conn, $sql2);
+
+
 
         $sql2="INSERT INTO appointment SET
         appointment_on = '$appoinment',
@@ -52,10 +70,10 @@
         header('location: index.php');
     }
 
-    if(isset($_POST['DELETE'])){
-        // header('location: booking.php?id='.$_POST['ID']);
-        header('location: category.php');
-    }
+    // if(isset($_POST['DELETE'])){
+    //     // header('location: booking.php?id='.$_POST['ID']);
+    //     header('location: category.php');
+    // }
     
 ?>
 <?php include('partial-front/footer.php') ?>

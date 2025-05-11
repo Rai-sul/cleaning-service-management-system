@@ -129,7 +129,7 @@
       </div>
       <?php
 
-          $sql="SELECT * FROM service WHERE Active = 'Yes' order by Price LIMIT 4";
+          $sql="SELECT * FROM service s INNER JOIN top_ser t ON (s.id = t.service_id) WHERE Active = 'Yes' order by t.count DESC LIMIT 4";
           $res=mysqli_query($conn,$sql);
           $count=mysqli_num_rows($res);
           if ($count>0){

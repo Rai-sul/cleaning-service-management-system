@@ -22,6 +22,10 @@
     }
     $sql = "DELETE FROM service WHERE Id=$id";
     $res = mysqli_query($conn, $sql);
+    if (!$res) {
+        $_SESSION['ser-del-error'] = "<div class='error-message'>Service can't be Deleted Because users hold the current service!</div>";
+        header('location:' . SITEURL . 'admin/manage-services.php');
+    }
     header('location:' . SITEURL . 'admin/manage-services.php');
     
 ?>

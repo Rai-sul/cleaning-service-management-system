@@ -33,6 +33,7 @@
         $address=$_POST['address'];
         $Price= $price * $measure;
     }
+
  
 
 
@@ -108,10 +109,6 @@
 </section>
 
 
-<?php
-    $_SESSION['booked-service'] = "Service booked successfully!";
-    // header("Location: index.php");
-?>
 
 
 <?php include('partial-front/footer.php') ?>

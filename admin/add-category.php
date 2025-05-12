@@ -41,15 +41,12 @@
             $active = $_POST['active'];
             if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != "") 
         {
-            // Upload image
-            // To upload image we need image name, source path and destination path
+
             $image_name = $_FILES['image']['name'];
-            // Auto rename image
-            // Get Extension (jpg, png, gif, etc) e.g."Home1.jpg"
+
             $ext = end(explode('.', $image_name));
 
-            // Rename the image
-            $image_name = "Service_Category_" . rand(000, 999) . '.' . $ext; // e.g."Service_Category_876.jpg"
+            $image_name = "Service_Category_" . rand(000, 999) . '.' . $ext; 
 
             $source_path = $_FILES['image']['tmp_name'];
             $destination_path = "../images/category/" . $image_name;
@@ -57,7 +54,7 @@
         } 
         else 
         {
-            // Don't upload
+       
             $image_name = "";
         }
 
@@ -69,11 +66,11 @@
         $res=mysqli_query($conn, $sql) or die(mysqli_error($conn));
         if ($res == TRUE) {
             $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
-            // Redirect Page to Manage Admin
+            
             header("location:" . SITEURL . 'admin/manage-category.php');
         } else {
             $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
-            // Redirect Page to Add Admin
+            
             header("location:" . SITEURL . 'admin/add-category.php');
         }
 

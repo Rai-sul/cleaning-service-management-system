@@ -4,8 +4,8 @@
     if (isset($_GET['id']) || isset($_GET['u_id'])) {
         $id = $_GET['id'];
         $uid = $_GET['u_id'];
-        echo $id;
-        echo $uid;
+        // echo $id;
+        // echo $uid;
         $sql = "SELECT status FROM appointment WHERE s_id=$id AND u_id=$uid";
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);

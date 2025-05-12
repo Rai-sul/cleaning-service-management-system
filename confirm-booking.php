@@ -4,14 +4,13 @@
     if(isset($_POST['submit'])){
         $id=$_POST['ID'];
         $uid=$_POST['UID'];
-        echo 'Uid', $uid;
-        echo 'id', $id;
+        // echo 'Uid', $uid;
+        // echo 'id', $id;
     }
 
     $sql="SELECT * FROM service WHERE Id='$id'";
     $res=mysqli_query($conn,$sql);
     $count=mysqli_num_rows($res);
-    echo 'count', $count;
     if ($count==1){
         while($rows=mysqli_fetch_assoc($res)){
         $ID = $rows['Id'];
@@ -70,7 +69,7 @@
             </tr>
 
             <tr>
-                Customer Details
+                <h1>Customer Details</h1>
             </tr>
 
             <tr>

@@ -1,7 +1,7 @@
 <?php 
-    session_start(); // Start the session
+    session_start(); 
     $_SESSION['admin-logout'] = "<div class='success-message'>Logout Successful</div>";
-    session_destroy(); // Destroy the session to log out the user
+    session_destroy(); 
 
     header('location:' . 'admin-login.php');
 ?>

@@ -30,7 +30,7 @@ if (isset($_GET['category_title'])) {
                     <div class="service-card">
                         <img src="images/services/<?php echo $image_name; ?>" alt="<?php echo $service_title; ?> Cleaning" class="service-img" />
                         <div class="service-content">
-                            <h3>Regular <?php echo $service_title; ?> Cleaning</h3>
+                            <h3>Regular <?php echo $service_title; ?></h3>
                             <div class="service-meta">
                                 <div class="service-price">
                                     <?php echo $price; ?><span><?php echo  " ",$price_des; ?></span>

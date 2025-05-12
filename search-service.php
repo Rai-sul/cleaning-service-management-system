@@ -2,7 +2,7 @@
 <section class="container">
     <?php
         $search = $_POST['search_inp'];
-        // if ($search != "") {
+        
         $sql = "SELECT * FROM service WHERE Title LIKE '%$search%' OR Description LIKE '%$search%'";
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
@@ -47,10 +47,6 @@
         } else {
             echo "<div class='error'>No Service Found</div>";
         }
-    //  else {
-    //     echo "<div class='error'>No Service Found</div>";
-    // }
-    
     ?>
     </div>
 

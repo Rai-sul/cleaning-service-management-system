@@ -60,20 +60,9 @@
 
     if(isset($_POST['submit'])){
         $title = $_POST['title'];
-
-
-        // For update active status
-        // if(isset($_POST['active'])){
-        //     $active = $_POST['active'];
-        // } else {
-        //     $active = "No";
-        // }
-
-
-        // For update active status
         $active=$_POST['active'];
 
-        // For update image
+        
         if (isset($_FILES['image']['name'])) {
             $image_name = $_FILES['image']['name'];
 
@@ -85,9 +74,9 @@
                 $destination_path = "../images/category/" . $image_name;
                 $upload = move_uploaded_file($source_path, $destination_path);
 
-                // remove the previous current image
+                
                 $path = "../images/category/".$current_image;
-                //REmove the Image
+               
                 $remove = unlink($path);
             } else {
                 $image_name = $current_image;

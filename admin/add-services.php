@@ -78,13 +78,12 @@ if (isset($_POST['submit'])) {
         $source_path = $_FILES['image']['tmp_name']; // Get the source path
         $destination_path = "../images/services/" . $image_name;
 
-        // Finally upload the image
+    
         $upload = move_uploaded_file($source_path, $destination_path);
     } else {
         $image_name = "";
     }
 
-    // Insert into database
     $sql = "INSERT INTO service SET 
         Title='$title',
         Description='$description',
@@ -95,11 +94,11 @@ if (isset($_POST['submit'])) {
         Active='$active_status'
     ";
 
-    // Execute query and save in database
+    
     $res = mysqli_query($conn, $sql);
 
 
-    // update values in top_ser table
+  
     $sql_serviceid = "SELECT Id FROM service WHERE Title='$title'";
     $res_serviceid = mysqli_query($conn, $sql_serviceid);
     $row = mysqli_fetch_assoc($res_serviceid);  
@@ -111,7 +110,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    // Check whether data inserted or not
+    
     if ($res == true) {
         $_SESSION['add'] = "<div class='success'>Service added successfully.</div>";
         header('location:' . SITEURL . 'admin/manage-services.php');

@@ -62,7 +62,7 @@
         <div class="col-4 text-center">
 
             <?php
-            $sql4 = "SELECT SUM(total) FROM appointment WHERE status='Appoint'";
+            $sql4 = "SELECT SUM(total) FROM appointment WHERE status='Completed'";
             $res4=mysqli_query($conn, $sql4);
             $count=mysqli_num_rows($res4);
             while($rows=mysqli_fetch_assoc($res4)){

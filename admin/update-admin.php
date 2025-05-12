@@ -74,7 +74,7 @@
                     <?php 
                             if($current_image != "")
                             {
-                                //Display the Image
+                                
                                 ?>
                                 <td>
                                 <img src="<?php echo SITEURL; ?>images/profile/<?php echo $current_image; ?>" width="150px">
@@ -84,7 +84,7 @@
                             }
                             else
                             {
-                                //Display Message
+                                
                                 $current_image="";
                             }
                         ?>
@@ -116,7 +116,7 @@
         $current_email = $_POST['current_email'];
         $new_email = $_POST['new_email'];
 
-        //**************** */ Need to focus on below portion ****************
+       
 
         if (isset($_FILES['image']['name'])) {
             $image_name = $_FILES['image']['name'];
@@ -128,9 +128,9 @@
                 $source_path = $_FILES['image']['tmp_name'];
                 $destination_path = "../images/profile/" . $image_name;
                 $upload = move_uploaded_file($source_path, $destination_path);
-                // remove the previous current image
+                
                 $path = "../images/profile/".$current_image;
-                //REmove the Image
+                
                 $remove = unlink($path);
             } else {
                 $image_name = $current_image;
@@ -140,7 +140,7 @@
             }
         }
 
-        //**************** */ Need to focus on above portion ****************
+     
 
         if($new_name == "")
         {

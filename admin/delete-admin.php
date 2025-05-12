@@ -6,11 +6,11 @@
         $id = $_GET['id'];
         $image_name = $_GET['image_name'];
 
-        //Remove the physical image file is available
+       
         if($image_name != "")
         {
             $path = "../images/profile/".$image_name;
-            //REmove the Image
+          
             $remove = unlink($path);
 
         }

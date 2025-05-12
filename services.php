@@ -26,7 +26,7 @@
                   <div class="service-card">
                     <img src="images/services/<?php echo $image_name; ?>" alt="<?php echo $image_name; ?>" class="service-img" />
                     <div class="service-content">
-                      <h3>Regular <?php echo $service_title; ?> Cleaning</h3>
+                      <h3>Regular <?php echo $service_title; ?></h3>
                       <div class="service-meta">
                         <div class="service-price">TK. <?php echo $price; ?><span><?php echo " ", $price_des; ?></span></div>
                         <div class="service-rating">
@@ -39,7 +39,7 @@
                         </div>
                       </div>
                       <p class="service-desc">
-                        Complete home cleaning including dusting, vacuuming, mopping, and
+                        Complete <?php echo $service_title; ?> cleaning including dusting, vacuuming, mopping, and
                         sanitizing all surfaces.
                       </p>
                       <a href="user_info.php?id=<?php echo $ID; ?>" class="btn btn-primary">Book Now</a>

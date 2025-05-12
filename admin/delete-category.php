@@ -8,7 +8,7 @@
         if($image_name != "")
         {
             $path = "../images/category/".$image_name;
-            //REmove the Image
+           
             $remove = unlink($path);
 
         }

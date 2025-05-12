@@ -60,15 +60,12 @@
 
                 if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != "") 
                 {
-                    // Upload image
-                    // To upload image we need image name, source path and destination path
+  
                     $image_name = $_FILES['image']['name'];
-                    // Auto rename image
-                    // Get Extension (jpg, png, gif, etc) e.g."Home1.jpg"
+            
                     $ext = end(explode('.', $image_name));
         
-                    // Rename the image
-                    $image_name = "Service_Category_" . rand(000, 999) . '.' . $ext; // e.g."Service_Category_876.jpg"
+                    $image_name = "Service_Category_" . rand(000, 999) . '.' . $ext; 
         
                     $source_path = $_FILES['image']['tmp_name'];
                     $destination_path = "../images/profile/" . $image_name;
@@ -76,12 +73,12 @@
                 } 
                 else 
                 {
-                    // Don't upload
+                   
                     $image_name = "";
                 }
 
                 if ($password == $confirm_password) {
-                    // SQL query to insert the admin
+                    
                     $sql = "INSERT INTO admin SET
                     full_name='$full_name',
                     username='$username',
@@ -91,17 +88,17 @@
                     $res = mysqli_query($conn, $sql);
 
                     if ($res) {
-                        // Signup successful
+                        
                         echo "Signup Successful";
                         $_SESSION['admin-signup'] = "<div class='success-message'>Login Successfull</div>";
                         header('location:'.SITEURL.'admin/admin-login.php');
                     } else {
-                        // Signup failed
+                        
                         echo "Signup Failed";
                         header('location:'.SITEURL.'admin/admin-signup.php');
                     }
                 } else {
-                    // Passwords do not match
+                    
                     echo "Passwords do not match";
                 }
 

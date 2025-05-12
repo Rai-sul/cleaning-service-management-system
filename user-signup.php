@@ -2,7 +2,7 @@
 <?php
     if(isset($_GET['id'])){
         $id=$_GET['id']; //service id
-        // echo $id;
+       
     }
 
 ?>
@@ -40,11 +40,10 @@
                 $res = mysqli_query($conn, $sql);
             
                 if($res){
-                    $_SESSION['user-signup'] = $username ; // Store username in session variable
-                    // $_SESSION['service_id'] = $id;
+                    $_SESSION['user-signup'] = $username ; 
                     header('location:' . SITEURL . 'user_info.php?id=' . $id);
 
-                    // header('location:'.SITEURL.'services.php');
+                 
             }
         }
 

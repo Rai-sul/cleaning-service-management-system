@@ -60,15 +60,8 @@ if (isset($_POST['submit'])) {
         $password = $_POST['password'];
         $email = $_POST['email'];
 
-        // $Full_Name = $_POST['full_name'];
-        // $User_Name = $_POST['username'];
-        // $Email = $_POST['email'];
-        // $Password = $_POST['password'];
-
         if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != "") 
-        {
-            // Upload image
-            // To upload image we need image name, source path and destination path
+        {            
             $image_name = $_FILES['image']['name'];
             // Auto rename image
             // Get Extension (jpg, png, gif, etc) e.g."Home1.jpg"
@@ -83,7 +76,7 @@ if (isset($_POST['submit'])) {
         } 
         else 
         {
-            // Don't upload
+          
             $image_name = "";
         }
         $sql = "INSERT INTO admin SET
@@ -98,11 +91,11 @@ if (isset($_POST['submit'])) {
 
     if ($res == TRUE) {
         $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
-        // Redirect Page to Manage Admin
+    
         header("location:" . SITEURL . 'admin/manage-admin.php');
     } else {
         $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
-        // Redirect Page to Add Admin
+      
         header("location:" . SITEURL . 'admin/add-admin.php');
     }
     }

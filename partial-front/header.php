@@ -35,7 +35,6 @@
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>  
             <div class="nav-buttons">
-            <!-- <a href="#" class="btn btn-outline">Login</a> -->
             <a href="services.php" class="btn btn-primary">Book Now</a>
           </div>  
         </nav>

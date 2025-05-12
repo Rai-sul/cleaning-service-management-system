@@ -7,15 +7,11 @@
         $Uid = $_SESSION['user_id']; // Retrieve user ID
         $id = $_SESSION['service_id']; // Retrieve service ID
 
-        echo "User ID: " . $Uid . "<br>";
-        echo "Service ID: " . $id . "<br>";
+        // echo "User ID: " . $Uid . "<br>";
+        // echo "Service ID: " . $id . "<br>";
     } else {
         echo "Session variables are not set.";
     }
-    // $id=$_SESSION['sservice_id'];
-    // $Uid=$_SESSION['user_id'];
-    // echo 'Uid', $Uid;
-    // echo 'id', $id;
 
     $sql1="UPDATE user SET s_id = '$id' WHERE id = '$Uid'";
     $res1=mysqli_query($conn,$sql1);
@@ -26,13 +22,13 @@
 
     $res=mysqli_query($conn,$sql);
     $count=mysqli_num_rows($res);
-    echo 'count', $count;
+    // echo 'count', $count;
     if ($count==1){
         while($rows=mysqli_fetch_assoc($res)){
-        // $ID = $rows['Id'];
+        
         
         $service_title = $rows['Title'];
-        echo 'serviceee',$service_title;
+        // echo 'serviceee',$service_title;
         $price = $rows['Price'];
         $price_des = $rows['Price_des'];
         $image_name = $rows['Image_Name'];
@@ -58,7 +54,7 @@
            
             <h1 class="text-center"><?php echo $service_title; ?></h1>
             <br>
-            <?php echo 'hidden id',$id ?>
+            <!-- <?php echo 'hidden id',$id ?>  -->
             <!-- service id -->
             
             <input type="hidden" name="ID" value="<?php echo $id; ?>">

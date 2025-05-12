@@ -3,7 +3,7 @@
 <?php
     if(isset($_GET['id'])){
         $ser_id=$_GET['id'];
-        echo $ser_id; //service id
+        // echo $ser_id; //service id
     }
     // if (isset($_SESSION['service_id'])) {
     //     $ser_id = $_SESSION['service_id']; // Retrieve service ID
@@ -35,11 +35,11 @@
         $password = mysqli_real_escape_string($conn, $_POST['password']);  
         $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
         $res = mysqli_query($conn, $sql);
-        $count = mysqli_num_rows($res); // Count the number of rows returned
+        $count = mysqli_num_rows($res); 
         if ($count == 1) {
-            // User exists and login successful
-            $row = mysqli_fetch_assoc($res); // Fetch the user data
-            $ID = $row['id']; // Fetch the user ID
+           
+            $row = mysqli_fetch_assoc($res); 
+            $ID = $row['id']; 
         } else {
             echo "<div style='color: red; margin-top: 10px;'>Invalid Username or Password</div>";
         }
@@ -47,13 +47,13 @@
         $count = mysqli_num_rows($res);
 
         if ($count == 1) {
-            // User exists and login successful
+            
 
-            $_SESSION['user'] = $username; // Store username in session variable
+            $_SESSION['user'] = $username;
             $_SESSION['user_id'] = $ID; // Store user ID in session variable
             $_SESSION['service_id'] = $ser_id; // Store service ID in session variable
             header('location:' . SITEURL . 'booking.php');
-            exit(); // Ensure no further code is executed after redirection
+            exit(); 
         } else {
             echo "<div style='color: red; margin-top: 10px;'>Invalid Username or Password</div>";
         }

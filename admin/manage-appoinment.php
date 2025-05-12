@@ -39,7 +39,7 @@
                     while ($rows = mysqli_fetch_assoc($res)) {
                         $id = $rows['Id'];
                         $uid = $rows['id'];
-                        echo 'user id', $uid;
+                        // echo 'user id', $uid;
                         
                         $service_title = $rows['Title'];
                         $price = $rows['price'];
@@ -67,24 +67,13 @@
                             <td><?php echo $customer_email; ?></td>
                             <td><?php echo $customer_address; ?></td>
                             <td><?php echo $status; ?></td>
-                            <td>
-                                <!-- <a href="update-appointment.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a> -->
-                                <a href="update-appointment.php?id=<?php echo $id; ?>&u_id=<?php echo $uid; ?>" class="btn-secondary">Update</a>
-
-                                <!-- <a href="delete-appointment.php?id=<?php echo $id; ?>" class="btn-secondary">Delete</a> -->
-
+                            <td>                             
+                                <a href="update-appointment.php?id=<?php echo $id; ?>&u_id=<?php echo $uid; ?>" class="btn-secondary">Update</a>                        
                             </td>
                         </tr>
 
                         <?php
-                            // $sql3 = "INSERT INTO top_ser (service_id, count)
-                            //     SELECT s_id, COUNT(*) AS count
-                            //     FROM appointment
-                            //     GROUP BY s_id
-                            //     ON DUPLICATE KEY UPDATE count = VALUES(count)";
 
-
-                            // $res3 = mysqli_query($conn, $sql3);
                             $sql3 = "INSERT INTO top_ser (service_id, count)
                                     SELECT s.id, COUNT(a.s_id) AS count
                                     FROM service s
@@ -104,4 +93,3 @@
 <?php include('partial/footer.php') ?>
 
 
-<!-- WHERE a.s_id = '$id' AND a.u_id = '$uid' -->

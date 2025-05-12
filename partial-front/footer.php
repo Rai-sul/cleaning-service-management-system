@@ -23,7 +23,6 @@
               <li><a href="#">Office Cleaning</a></li>
               <li><a href="#">Car Wash</a></li>
               <li><a href="#">Dry Cleaning</a></li>
-              <li><a href="#">Carpet Cleaning</a></li>
             </ul>
           </div>
 

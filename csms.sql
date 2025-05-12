@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2025 at 03:55 PM
+-- Generation Time: May 12, 2025 at 02:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Id`, `Full_Name`, `User_Name`, `Email`, `Password`, `Image_Name`) VALUES
-(27, 'Raisul', 'RIM', 'raisul@gmail.com', '12345', 'Service_Category_579.jpg');
+(27, 'Raisul', 'RIM', 'raisul@gmail.com', '12345', 'Service_Category_579.jpg'),
+(28, 'Mahima', 'mahima', 'mahima@gmai.com', '1', 'Profile_Category_326.jpg'),
+(29, 'Nishat', 'nishat', 'nishat@gmail.com', '111', 'Service_Category_80.jpg');
 
 -- --------------------------------------------------------
 
@@ -66,9 +68,7 @@ CREATE TABLE `appointment` (
 
 INSERT INTO `appointment` (`id`, `appointment_on`, `measure`, `total`, `appointment_made`, `status`, `u_id`, `s_id`) VALUES
 (38, '1989-07-22 20:06:00', '10', 60, '2025-05-03 08:16:34', 'Appoint', 26, 40),
-(39, '1985-08-05 02:05:00', '57', 8550, '2025-05-03 08:17:25', 'Appoint', 26, 42),
-(40, '1997-09-14 16:06:00', '36', 108, '2025-05-03 08:53:31', 'Appoint', 28, 44),
-(41, '1998-07-26 09:24:00', '51', 76500, '2025-05-05 03:42:49', 'Appoint', 29, 41);
+(61, '2011-11-10 05:43:00', '71', 11644, '2025-05-11 07:54:39', 'Completed', 26, 54);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`Id`, `Title`, `Image_Name`, `Active`) VALUES
 (19, 'Home', 'Service_Category_420.jpg', 'Yes'),
-(20, 'Laundry', '', 'Yes');
+(21, 'Laundry', 'Service_Category_444.png', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -114,10 +114,34 @@ CREATE TABLE `service` (
 
 INSERT INTO `service` (`Id`, `Title`, `Description`, `Price`, `Price_des`, `Image_Name`, `Category_Title`, `Active`) VALUES
 (40, 'Office Cleaning And Pest Control', 'Pest Control & Disinfecting', 6, '/sq.ft.', '', 'Office', 'Yes'),
-(41, 'Car Wash', 'Inside And Outside Car Cleaning', 1500, 'Each', '', '', 'Yes'),
+(41, 'Car Wash', 'Inside And Outside Car Cleaning', 1500, 'Each', 'Service__12.jpg', ' ', 'Yes'),
 (42, 'Dry Cleaning', 'Dry Cleaning Only', 150, 'Each', '', 'Laundry', 'Yes'),
-(43, 'Laundry Wash', 'Machine Wash with Fabric & Color Guard', 100, 'Each', '', 'Laundry', 'Yes'),
-(44, 'Pest Control', 'Pest Control & Disinfecting', 3, '/sq.ft.', '', 'Office', 'Yes');
+(54, 'brac', 'Voluptate neque nost', 164, '75', '', 'Et eos consequatur', 'Yes');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `top_ser`
+--
+
+CREATE TABLE `top_ser` (
+  `service_id` int(11) NOT NULL,
+  `count` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `top_ser`
+--
+
+INSERT INTO `top_ser` (`service_id`, `count`) VALUES
+(40, 1),
+(41, 0),
+(42, 0),
+(43, 0),
+(44, 0),
+(50, 0),
+(53, 0),
+(54, 1);
 
 -- --------------------------------------------------------
 
@@ -141,10 +165,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `full_name`, `username`, `password`, `email`, `address`, `phone`, `s_id`) VALUES
-(26, 'Raisul', 'RIM', '12345', 'raisul@gmail.com', 'Quia eos dolorum cu', 1516547422, 44),
-(27, 'Eve Rivas', 'fabozig', 'Pa$$w0rd!', 'xefyxim@mailinator.com', 'Velit voluptatem qu', 1, 42),
-(28, 'Hop', 'madixaf', '111', 'xoryp@mailinator.com', 'Sit consectetur per', 1, 44),
-(29, 'Keely Snyder', 'jezo', '11111', 'gydukowuv@mailinator.com', 'Suscipit dolore blan', 1, 41);
+(26, 'Raisul', 'RIM', '12345', 'raisul@gmail.com', 'Quia eos dolorum cu', 1516547422, 54),
+(42, 'Ahmed Shannon', 'tas', '11', 'cynuwo@mailinator.com', 'Reprehenderit incid', 1, 54),
+(52, 'Owen Sexton', 'n', '1', 'mete@mailinator.com', 'Duis ab modi ut quis', 1, 42),
+(53, 'Christen Galloway', 'lisev', 'Pa$$w0rd!', 'qybabij@mailinator.com', 'Nisi omnis obcaecati', 1, 42),
+(54, 'Alana Diaz', 'd', '2', 'fopy@mailinator.com', 'In fugiat perferendi', 1, 42),
+(55, 'Alana Diaz', 'd', '2', 'fopy@mailinator.com', 'In fugiat perferendi', 1, 42),
+(56, 'Reuben Moore', 'gg', '1', 'tyroxupa@mailinator.com', 'Non irure ipsum adip', 1, 40),
+(57, 'Miriam Joyner', 'm', '22', 'toqopyw@mailinator.com', 'Sequi eveniet autem', 1, 42);
 
 --
 -- Indexes for dumped tables
@@ -180,6 +208,13 @@ ALTER TABLE `service`
   ADD KEY `Category_Title` (`Category_Title`);
 
 --
+-- Indexes for table `top_ser`
+--
+ALTER TABLE `top_ser`
+  ADD UNIQUE KEY `service_id_2` (`service_id`),
+  ADD KEY `service_id` (`service_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -194,31 +229,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- Constraints for dumped tables

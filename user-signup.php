@@ -15,7 +15,7 @@
 
 <body class="loginBody">
     <div class="login-container">
-        <h1>Login</h1>
+        <h1>Registration</h1>
         <form action="" method="POST">
             <input type="text" name="name" placeholder="Enter Full Name" required>
             <input type="text" name="username" placeholder="Enter Username" required>

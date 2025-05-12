@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2025 at 02:22 AM
+-- Generation Time: May 12, 2025 at 04:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -67,8 +67,10 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `appointment_on`, `measure`, `total`, `appointment_made`, `status`, `u_id`, `s_id`) VALUES
-(38, '1989-07-22 20:06:00', '10', 60, '2025-05-03 08:16:34', 'Appoint', 26, 40),
-(61, '2011-11-10 05:43:00', '71', 11644, '2025-05-11 07:54:39', 'Completed', 26, 54);
+(64, '2025-05-27 19:11:00', '1200', 6000, '2025-05-12 03:12:04', 'Completed', 60, 42),
+(65, '2025-05-27 19:13:00', '2', 400, '2025-05-12 03:14:05', 'Appoint', 61, 57),
+(68, '2025-05-21 19:29:00', '1', 1500, '2025-05-12 03:29:27', 'Completed', 63, 41),
+(70, '2025-05-16 19:53:00', '2', 400, '2025-05-12 03:53:31', 'Appoint', 64, 57);
 
 -- --------------------------------------------------------
 
@@ -88,8 +90,13 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`Id`, `Title`, `Image_Name`, `Active`) VALUES
-(19, 'Home', 'Service_Category_420.jpg', 'Yes'),
-(21, 'Laundry', 'Service_Category_444.png', 'Yes');
+(19, 'Home', 'Profile_Category_495.jpg', 'Yes'),
+(21, 'Laundry', 'Profile_Category_500.jpg', 'Yes'),
+(22, 'Office', 'Profile_Category_307.jpg', 'Yes'),
+(23, 'Car', 'Profile_Category_358.jpg', 'Yes'),
+(24, 'University', 'Profile_Category_442.jpg', 'Yes'),
+(25, 'Hospital And HealthCare', 'Profile_Category_240.jpg', 'Yes'),
+(26, 'Shopping Mall', 'Service_Category_418.jpg', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -113,10 +120,18 @@ CREATE TABLE `service` (
 --
 
 INSERT INTO `service` (`Id`, `Title`, `Description`, `Price`, `Price_des`, `Image_Name`, `Category_Title`, `Active`) VALUES
-(40, 'Office Cleaning And Pest Control', 'Pest Control & Disinfecting', 6, '/sq.ft.', '', 'Office', 'Yes'),
-(41, 'Car Wash', 'Inside And Outside Car Cleaning', 1500, 'Each', 'Service__12.jpg', ' ', 'Yes'),
-(42, 'Dry Cleaning', 'Dry Cleaning Only', 150, 'Each', '', 'Laundry', 'Yes'),
-(54, 'brac', 'Voluptate neque nost', 164, '75', '', 'Et eos consequatur', 'Yes');
+(40, 'Office Pest Control', 'Pest Control & Disinfecting', 35, '/sq.ft.', 'Service__99.jpg', 'Office      ', 'Yes'),
+(41, 'Car Wash', 'Inside And Outside Car Cleaning', 1500, 'Each', 'Service__685.jpg', 'Car  ', 'Yes'),
+(42, 'House Cleaning And Pest Control', 'Dusting, Booming, Pest Control & Disinfecting', 5, '/sq.ft.', 'Service__804.jpg', 'Home  ', 'Yes'),
+(54, 'University Cleaning And Pest Control', 'Dusting, Booming, Pest Control & Disinfecting', 25, '/sq.ft.', 'Service__587.jpg', 'University  ', 'Yes'),
+(55, 'Dry Cleaning', 'Dry Cleaning Only', 250, 'Each', 'Service__987.jpg', 'Laundry  ', 'Yes'),
+(57, 'Laundry Wash', 'Machine Wash with Fabric & Color Guard', 200, 'Each', 'Service__578.jpg', 'Laundry ', 'Yes'),
+(58, 'Laundry Iron', 'Iron & Fold Laundry', 10, 'Each', 'Service__409.jpg', 'Laundry ', 'Yes'),
+(59, 'Wash & Iron', 'Machine Wash,Iron & Fold Laundry', 30, 'Each', 'Service__780.jpg', 'Laundry ', 'Yes'),
+(60, 'House Cleaning', 'Dusting, Booming & Disinfecting', 15, '/sq.ft.', 'Service__859.jpg', 'Home ', 'Yes'),
+(61, 'Office Cleaning', 'Dusting,Brooming,Glass cleaning & Disinfecting', 25, '/sq.ft.', 'Service__34.jpg', 'Office   ', 'Yes'),
+(64, 'Hospital Cleaning And Laundry', 'Dusting, booming, pest control, disinfecting & laundry ', 25, '/sq.ft.', 'Service__942.jpg', 'Hospital And HealthCare  ', 'Yes'),
+(65, 'Shopping Mall Cleaning', 'Dusting,Glass ceaning,Pest control & Disinfecting', 25, '/sq.ft.', 'Service_882.jpg', 'Shopping Mall', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -134,14 +149,18 @@ CREATE TABLE `top_ser` (
 --
 
 INSERT INTO `top_ser` (`service_id`, `count`) VALUES
-(40, 1),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
-(50, 0),
-(53, 0),
-(54, 1);
+(40, 0),
+(41, 1),
+(42, 1),
+(54, 0),
+(55, 0),
+(57, 2),
+(58, 0),
+(59, 0),
+(60, 0),
+(61, 0),
+(64, 0),
+(65, 0);
 
 -- --------------------------------------------------------
 
@@ -166,13 +185,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `full_name`, `username`, `password`, `email`, `address`, `phone`, `s_id`) VALUES
 (26, 'Raisul', 'RIM', '12345', 'raisul@gmail.com', 'Quia eos dolorum cu', 1516547422, 54),
-(42, 'Ahmed Shannon', 'tas', '11', 'cynuwo@mailinator.com', 'Reprehenderit incid', 1, 54),
-(52, 'Owen Sexton', 'n', '1', 'mete@mailinator.com', 'Duis ab modi ut quis', 1, 42),
-(53, 'Christen Galloway', 'lisev', 'Pa$$w0rd!', 'qybabij@mailinator.com', 'Nisi omnis obcaecati', 1, 42),
-(54, 'Alana Diaz', 'd', '2', 'fopy@mailinator.com', 'In fugiat perferendi', 1, 42),
-(55, 'Alana Diaz', 'd', '2', 'fopy@mailinator.com', 'In fugiat perferendi', 1, 42),
-(56, 'Reuben Moore', 'gg', '1', 'tyroxupa@mailinator.com', 'Non irure ipsum adip', 1, 40),
-(57, 'Miriam Joyner', 'm', '22', 'toqopyw@mailinator.com', 'Sequi eveniet autem', 1, 42);
+(60, 'Reyna', 'reyna', '123', 'reyna@gmail.com', 'Bind', 1, 42),
+(61, 'Phoenix', 'phoenix', '123', 'phoenix@gmail.com', 'Fracture', 0, 57),
+(63, 'Omen', 'omen', '123', 'omen@gmail.com', 'Lotus', 132, 41),
+(64, 'Jett', 'jett', '123', 'jett@gmail.com', 'Pearl', 553, 57);
 
 --
 -- Indexes for dumped tables
@@ -235,25 +251,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- Constraints for dumped tables
